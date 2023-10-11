@@ -1,0 +1,7 @@
+rootProject.name = "My Application"
+include ':app'
+include ':javalib'
+include ':livedata'
+include ':kotlinlearn'
+include ':kotlinlearn'
+include ':lib'

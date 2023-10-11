@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/red" />
+    <item android:top="200dp"  >
+        <bitmap
+            android:gravity="top|center_horizontal"
+            android:src="@mipmap/privacy_logo" />
+
+    </item>
+    <item android:top="200dp"  >
+        <shape
+            android:gravity="top|center_horizontal"
+            android:shape="rectangle"
+            android:visible="true"
+            android:tint="#99000000"/>
+    </item>
+</layer-list>

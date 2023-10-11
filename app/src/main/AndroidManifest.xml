@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="jix.permission.PULL_ALIVE"/>
+    <application
+        android:name=".MApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+        <!-- android:theme="@style/Theme.MyApplication" -->
+        <activity android:name=".MainActivity2"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication.NoActionBar"> <!--  -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity-alias
+            android:name=".MainActivityIcon"
+            android:enabled="true"
+            android:icon="@mipmap/icon_main_list_video"
+            android:label="别名--App视频"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".MainActivityNoIcon"
+            android:enabled="false"
+            android:label="别名--无图标"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <receiver android:name=".PullLiveBroadcastReceiver"
+            android:enabled="true" android:exported="true"><!-- android:permission="jix.permission.PULL_ALIVE" -->
+            <intent-filter>
+                <action android:name="com.jix.broadcast.PULL_ALIVE"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".AppInstaller"
+            android:authorities="${applicationId}.xxx1-installer"
+            android:enabled="@bool/xxx_auto_install"
+            android:exported="false" />
+    </application>
+
+</manifest>
